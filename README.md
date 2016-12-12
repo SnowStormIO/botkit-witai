@@ -1,4 +1,6 @@
 # Botkit Middleware for Wit.ai
+[![npm](https://img.shields.io/npm/l/botkit-witai.svg?style=flat)]()
+
 This Botkit Middleware is maintained up-to-date with both Wit.ai and Botkit latest versions. 
 ## Installation
 In order to utilize wit.ai's service you will need to create an account. Grab the *access token* there.
