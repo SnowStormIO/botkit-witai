@@ -41,7 +41,7 @@ module.exports = function (options) {
     if (message.intents && message.intents.length) {
       for (var i = 0; i < message.intents.length; i++) {
         for (var t = 0; t < patterns.length; t++) {
-          if (message.intents[i].intent == patterns[t] && message.intents[i].confidence >= options) {
+          if (message.intents[i].intent == patterns[t] && message.intents[i].confidence >= options.minConfidence) {
             return true;
           }
         }

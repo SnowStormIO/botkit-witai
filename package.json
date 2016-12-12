@@ -13,10 +13,19 @@
     "facebook",
     "messenger"
   ],
+  "bugs": {
+    "url": "https://github.com/SnowStormIO/botkit-witai/issues"
+  },
   "engines": {
     "node": "6.6.0"
   },
-  "author": "Rafael Casuso",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnowStormIO/botkit-witai"
+  },
+  "author": {
+    "name": "Rafael Casuso"
+  },
   "license": "MIT",
   "dependencies": {
     "node-wit": "^4.2.0"
