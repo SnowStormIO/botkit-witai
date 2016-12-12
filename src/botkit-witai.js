@@ -24,7 +24,7 @@ module.exports = function (options) {
       client.message(message.text)
         .then((data) => {
         console.log('Wit.ai response: ' + JSON.stringify(data));
-        message.intents = data.outcomes;
+        message.entities = data.entities;
         next();
       })
         .catch((err) => {
@@ -32,17 +32,21 @@ module.exports = function (options) {
         next(err);
         });
     } else {
-      message.intents = [];
+      message.entities = {};
       next();
     }
   };
 
   middleware.hears = function (patterns, message) {
-    if (message.intents && message.intents.length) {
-      for (var i = 0; i < message.intents.length; i++) {
+    if (message.entities && Object.keys(message.entities).length) {
+      for (var i = 0; i < Object.keys(message.entities).length; i++) {
         for (var t = 0; t < patterns.length; t++) {
-          if (message.intents[i].intent == patterns[t] && message.intents[i].confidence >= options.minConfidence) {
-            return true;
+          if (Object.keys(message.entities)[i] == patterns[t]){
+            for (var j = 0; j < message.entities[Object.keys(message.entities)[i]].length; j++){
+              if (message.entities[Object.keys(message.entities)[i]].confidence >= options.minConfidence){
+                return true;
+              }
+            }
           }
         }
       }
