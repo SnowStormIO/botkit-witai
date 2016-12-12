@@ -1,0 +1,21 @@
+{
+  "name": "botkit-witai",
+  "version": "1.0.0",
+  "description": "Botkit middleware for Wit.ai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "botkit",
+    "wit.ai",
+    "slack",
+    "facebook",
+    "messenger"
+  ],
+  "author": "Rafael Casuso",
+  "license": "MIT",
+  "dependencies": {
+    "node-wit": "^4.2.0"
+  }
+}
