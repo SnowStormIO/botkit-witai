@@ -4,7 +4,7 @@
   "description": "Botkit middleware for Wit.ai",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/botkit-witai.js"
   },
   "keywords": [
     "botkit",
@@ -13,6 +13,9 @@
     "facebook",
     "messenger"
   ],
+  "engines": {
+    "node": "6.6.0"
+  },
   "author": "Rafael Casuso",
   "license": "MIT",
   "dependencies": {
