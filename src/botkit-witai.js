@@ -38,12 +38,13 @@ module.exports = function (options) {
   };
 
   middleware.hears = function (patterns, message) {
+    console.log("Message entities: " + message.entities + " for patterns " + patterns);
     if (message.entities && Object.keys(message.entities).length) {
       for (var i = 0; i < Object.keys(message.entities).length; i++) {
         for (var t = 0; t < patterns.length; t++) {
           if (Object.keys(message.entities)[i] == patterns[t]){
             for (var j = 0; j < message.entities[Object.keys(message.entities)[i]].length; j++){
-              if (message.entities[Object.keys(message.entities)[i]].confidence >= options.minConfidence){
+              if (message.entities[Object.keys(message.entities)[i]][j].confidence >= options.minConfidence){
                 return true;
               }
             }
