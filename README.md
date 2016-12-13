@@ -1,5 +1,5 @@
 # Botkit Middleware for Wit.ai
-[![npm](https://img.shields.io/npm/l/botkit-witai.svg?style=flat)]()
+[![npm](https://img.shields.io/npm/dt/botkit-witai.svg)]() [![npm](https://img.shields.io/npm/l/botkit-witai.svg?style=flat)]() [![GitHub stars](https://img.shields.io/github/stars/SnowStormIO/botkit-witai.svg?style=social&label=Star)]()
 
 Unleash the power of Wit.ai's Natural Language Processing to your Botkit bot with this middleware. All incoming text messages (by default it filters payload derived from Facebook Messenger buttons like *Quick Replies* and *Postbacks*) will go through Wit.ai's API to extract useful *entities* that will be added to the message object so they can be used in the controller.
 
