@@ -45,7 +45,7 @@ module.exports = function (options) {
   };
 
   middleware.hears = function (patterns, message) {
-    if (message.entities && Object.keys(message.entities).length) {
+    if (patterns && message && message.entities && Object.keys(message.entities).length) {
       for (var i = 0; i < Object.keys(message.entities).length; i++) {
         for (var t = 0; t < patterns.length; t++) {
           if (Object.keys(message.entities)[i] == patterns[t]){
