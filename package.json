@@ -1,6 +1,6 @@
 {
   "name": "botkit-witai",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Botkit middleware for Wit.ai",
   "main": "index.js",
   "scripts": {
