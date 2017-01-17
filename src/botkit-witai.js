@@ -30,7 +30,6 @@ module.exports = function (options) {
     if (message.text && message.text.indexOf("_") == -1 && !message.bot_id && !message.payload && !message.attachments && !message.quick_reply) {
       client.message(message.text)
         .then((data) => {
-        console.log('Wit.ai response: ' + JSON.stringify(data));
         message.entities = data.entities;
         next();
       })
