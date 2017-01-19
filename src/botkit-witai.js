@@ -48,8 +48,6 @@ module.exports = function (options) {
       for (var i = 0; i < Object.keys(message.entities).length; i++) {
         for (var t = 0; t < patterns.length; t++) {
           for (var j = 0; j < message.entities[Object.keys(message.entities)[i]].length; j++){
-            // Previously compared keys to patterns (returned always false), now the value of the key is compared
-            // Also switched if- and for-statement to iterate over intents since intents are returned as an array
             if (message.entitites[Object.keys(message.entities)[i]][j].value == patterns[t]){
               if (message.entities[Object.keys(message.entities)[i]][j].confidence >= options.minConfidence){
                 return true;
