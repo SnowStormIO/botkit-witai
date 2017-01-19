@@ -10,7 +10,7 @@ module.exports = function (options) {
 
   options.minConfidence = options.minConfidence || 0.5;
 
-  options.logLevel = options.logLevel ? (logLevels.indexOf(options.logLevel) != -1 ? options.logLevel.toUpperCase() : "DEBUG") : null;
+  options.logLevel = options.logLevel ? (logLevels.indexOf(options.logLevel) != -1 ? options.logLevel.toLowerCase() : "debug") : null;
 
   const params = {
     accessToken: options.accessToken
@@ -30,7 +30,6 @@ module.exports = function (options) {
     if (message.text && message.text.indexOf("_") == -1 && !message.bot_id && !message.payload && !message.attachments && !message.quick_reply) {
       client.message(message.text)
         .then((data) => {
-        console.log('Wit.ai response: ' + JSON.stringify(data));
         message.entities = data.entities;
         next();
       })
@@ -48,8 +47,8 @@ module.exports = function (options) {
     if (message.entities && Object.keys(message.entities).length) {
       for (var i = 0; i < Object.keys(message.entities).length; i++) {
         for (var t = 0; t < patterns.length; t++) {
-          if (Object.keys(message.entities)[i] == patterns[t]){
-            for (var j = 0; j < message.entities[Object.keys(message.entities)[i]].length; j++){
+          for (var j = 0; j < message.entities[Object.keys(message.entities)[i]].length; j++){
+            if (message.entitites[Object.keys(message.entities)[i]][j].value == patterns[t]){
               if (message.entities[Object.keys(message.entities)[i]][j].confidence >= options.minConfidence){
                 return true;
               }
