@@ -10,7 +10,7 @@ module.exports = function (options) {
 
   options.minConfidence = options.minConfidence || 0.5;
 
-  options.logLevel = options.logLevel ? (logLevels.indexOf(options.logLevel) != -1 ? options.logLevel.toUpperCase() : "DEBUG") : null;
+  options.logLevel = options.logLevel ? (logLevels.indexOf(options.logLevel) !== -1 ? options.logLevel : "debug") : null;
 
   const params = {
     accessToken: options.accessToken
